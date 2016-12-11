@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <title>Cinephile</title>
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/add-on/jplayer.playlist.min.js"></script> -->
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+      <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+      <script src="https://use.fontawesome.com/883a7728bf.js"></script>
+      <style>
+      @font-face {
+  font-family: myfont;
+  src: url(myfont2.ttf);
+}
+ @font-face {
+   font-family:brand_name;
+   src:url(myfont3.ttf);
+
+
+
+ }
+ body{
+   overflow-x: hidden;
+ }
+ @font-face {
+   font-family:info2;
+   src:url(myfont3.otf);
+
+
+
+ }
+ #critics
+ {
+   color:	#F88379;
+ }
+p,button{
+  font-family: "Tahoma, Geneva, sans-serif";
+  font-weight: bold;
+  color:#e5e5e5;
+}
+ h2,h1
+ {
+   font-family:"Georgia, Serif;";
+   color:#cccccc;
+   font-weight: bold;
+ }
+ #fav,.btn-success {
+   border-radius: 20px;
+ }
+ .footer-distributed{
+ 	background-color: #30AD23;
+ 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+ 	box-sizing: border-box;
+ 	width: 100%;
+ 	text-align: left;
+ 	font: normal 16px sans-serif;
+
+ 	padding: 45px 50px;
+ 	margin-top: 80px;
+ }
+
+ .footer-distributed .footer-left p{
+ 	color:  #000;
+ 	font-size: 14px;
+ 	margin: 0;
+ }
+
+ /* Footer links */
+
+ .footer-distributed p.footer-links{
+ 	font-size:18px;
+ 	font-weight: bold;
+ 	color:  #333;
+ 	margin: 0 0 10px;
+ 	padding: 0;
+ }
+
+ .footer-distributed p.footer-links a{
+ 	display:inline-block;
+ 	line-height: 1.8;
+ 	text-decoration: none;
+ 	color:  inherit;
+ }
+
+ .footer-distributed .footer-right{
+ 	float: right;
+ 	margin-top: 6px;
+ 	max-width: 180px;
+ }
+
+ .footer-distributed .footer-right a{
+ 	display: inline-block;
+ 	width: 35px;
+ 	height: 35px;
+ 	background-color:  #005A31;
+ 	border-radius: 2px;
+
+ 	font-size: 20px;
+ 	color:#fff;
+ 	text-align: center;
+ 	line-height: 35px;
+
+ 	margin-left: 3px;
+ }
+
+
+ @media (max-width: 600px) {
+
+ 	.footer-distributed .footer-left,
+ 	.footer-distributed .footer-right{
+ 		text-align: center;
+ 	}
+
+ 	.footer-distributed .footer-right{
+ 		float: none;
+ 		margin: 0 auto 20px;
+ 	}
+
+ 	.footer-distributed .footer-left p.footer-links{
+ 		line-height: 1.8;
+ 	}
+ }
+
+      </style>
+   </head>
+   <body style="background-color:#005A31;color:#fff;">
+     <nav class="navbar navbar" style="background-color: #30AD23;height:50px;">
+<div class="container-fluid" style="height:50px;">
+<div class="navbar-header">
+ <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+   <span class="sr-only">Toggle navigation</span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+   <span class="icon-bar"></span>
+ </button>
+ <a class="navbar-brand" href="#"><img src="brand3.png" class="img-responsive" style="margin-top:-90px;" /></a>
+<!-- <a class="navbar-brand" href="#"><h2 style="color:#333;font-family:brand_name;margin-top:-7px;margin-left:-10px;">Cinephile</h2></a>
+--></div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="height:50px;">
+ <ul class="nav navbar-nav">
+
+ </ul>
+ <div class="navbar-form navbar-right" role="search">
+   <div class="form-group">
+     <input type="text" class="form-control" id="fav" placeholder="Enter movie name">
+   </div>
+   <button type="submit" id ="btn" class="btn btn-success" >Search movie</button>
+</div>
+
+</div>
+</div>
+</nav>
+         <div class="row">
+
+            <div class="col-sm-4" style="padding-left:30px;"id="thumb"><img id="thumb1" style="border-style:solid;margin-left:40px;"></div>
+            <div class="col-sm-4">
+            <h2 style="display:none;">Title</h2><p id="rotten"></p>
+            <h2 style="display:none;">Genre</h2><p id="genre"></p>
+            <h2 style="display:none;">Imdb Rating</h2><p id="imd"></p>
+            <h2 style="display:none;">Rotten Tomatoes</h2><p id="rotten5"></p>
+            <h2 style="display:none;">Plot</h2><p id="plot"></p>
+           </div>
+            <div class="col-sm-4">
+              <h2 style="display:none;">Year</h2><p id="year"></p>
+              <h2 style="display:none;">Rated</h2><p id="rated"></p>
+              <h2 style="display:none;">Released</h2><p id="release"></p>
+              <h2 style="display:none;">Actors</h2><p id="actors"></p>
+              <h2 style="display:none;">Critics Consensus</h2><p id="critics"></p>
+              <!-- <a href="#link_" style="display:none;"id ="btn1" class="btn btn-danger" ><i class="fa fa-youtube-play fa-4x" aria-hidden="true"></i><h1>Watch HD trailer</h1></a>
+              -->
+            </div>
+
+         </div>
+   <img src="loader.gif" id="loader" style="margin-top:-260px;margin-left:560px;display:none;">
+      <h1 ></h1>
+      <div class="row">
+
+  <iframe width="600" height="415"frameborder="0" style="margin-left:50px;display:none;"id="link_" ></iframe>
+</div>
+      <script>
+  $(document).ready(function()
+    {
+       $('#btn').click(function()
+     {
+
+       var title=$("#fav").val();
+       $("#loader").show();
+       $(".row").css('opacity','0.1');
+       $("#info2").css('opacity','0.1');
+
+       $("#link_").hide();
+
+         $.ajax({
+          url:"http://www.omdbapi.com/?t="+title+"&y=&plot=short&tomatoes=true",
+          data:{
+            format:'json'
+          },
+          error:function()
+          {
+            $("#info2").html('<p>An error has occure</p>');
+            console.log("error");
+
+          },
+          dataType:'jsonp',
+          success:function(data)
+          {
+            if(data.tomatoMeter!='N/A')
+            {
+            var rate=data.tomatoMeter+"%";
+          }
+            else {
+               var rate=data.tomatoMeter;
+            }
+            console.log("inside");
+
+
+
+           if(data.Response!='False')
+           {
+            $('#rotten5').html(rate);
+            $('#rotten').html(data.Title);
+            $('#genre').html(data.Genre);
+            $('#imd').html(data.imdbRating);
+            $('#plot').html(data.Plot);
+            $('#critics').html(data.tomatoConsensus);
+            $('#actors').html(data.Actors);
+            $('#release').html(data.Released);
+            $('#rated').html(data.Rated);
+            $('#year').html(data.Year);
+            $("#thumb1").attr('src', data.Poster);
+            $("#loader").hide();
+            $(".row").css('opacity','1');
+            $("h2").show();
+            $("h1").show();
+            $("#info2").css('opacity','1');
+            $("#link_").show();
+            $('#btn1').show();
+            $('.footer-distributed').show();
+            $('body').css("background-image",'none');
+
+          }
+        else
+          {
+            $('body').css("background-image","url(not.jpg)");
+            $("#loader").hide();
+
+
+
+          }
+
+
+          }
+        });
+          console.log("inside second");
+             $.ajax({
+
+               url:"https://www.googleapis.com/youtube/v3/search?part=id&maxResults=1&q="+title+" official trailer "+"&key=AIzaSyASSzQk3te3e4Aq75cYu3JQF5HL0ybT88Q",
+               dataType:'jsonp',
+               success:function(data)
+               {
+                 //console.log(data);
+                 var src_="https://www.youtube.com/embed/";
+                 var src2=src_+data.items[0].id.videoId;
+                 $("#link_").attr("src",src2);
+               }
+             });
+       });
+     });
+
+
+
+
+      </script>
+
+      <footer class="footer-distributed" style="display:none;">
+
+        <div class="footer-right">
+
+          <a href="https://www.facebook.com/Cinephile-1624290691197924/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/MandalOmkar"><i class="fa fa-twitter"></i></a>
+          <a href="https://github.com/Omkar8039"><i class="fa fa-github"></i></a>
+
+        </div>
+
+        <div class="footer-left">
+
+          <p class="footer-links">
+            <a href="#">Developed By:Omkar Nath Mandal(Greed)</a>
+
+
+          </p>
+
+          <p>Cinephile &copy; 2016</p>
+          <p>Site's work is still in progress.
+          Please keep calm and ignore some bugs :P
+          <h2>Cheers!!!</h2></p>
+        </div>
+
+      </footer>
+
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -
+    !-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
